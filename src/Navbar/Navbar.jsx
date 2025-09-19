@@ -1,3 +1,4 @@
+// Navigation.jsx
 import { useState, useEffect } from "react";
 import { IoMenu } from "react-icons/io5";
 import { GiCrossMark } from "react-icons/gi";
@@ -20,7 +21,7 @@ const Navigation = () => {
     { href: "#services", label: "Services" },
     { href: "#about", label: "About" },
     { href: "#blog", label: "Blog" },
-    { href: "#contact", label: "Contact" }
+    { href: "#contact", label: "Contact" },
   ];
 
   return (
@@ -53,7 +54,8 @@ const Navigation = () => {
             ))}
 
             <a
-               href="https://wa.me/919876543210" target="_blank"
+              href="https://wa.me/919876543210"
+              target="_blank"
               className={`ml-4 px-4 py-2 bg-yellow-600 rounded-md font-medium transition-colors ${
                 isScrolled
                   ? "bg-primary text-white hover:bg-primary/90"
@@ -67,11 +69,17 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             className={`md:hidden p-2 rounded-md transition-colors ${
-              isScrolled ? "text-foreground hover:bg-gray-100" : "text-white hover:bg-white/20"
+              isScrolled
+                ? "text-foreground hover:bg-gray-100"
+                : "text-white hover:bg-white/20"
             }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <GiCrossMark className="w-6 h-6" /> : <IoMenu className="w-6 h-6" />}
+            {isMobileMenuOpen ? (
+              <GiCrossMark className="w-6 h-6" />
+            ) : (
+              <IoMenu className="w-6 h-6" />
+            )}
           </button>
         </div>
 
@@ -89,9 +97,10 @@ const Navigation = () => {
                   {link.label}
                 </a>
               ))}
-              <div className="px-4 bg-yello">
+              <div className="px-4">
                 <a
-                   href="https://wa.me/919876543210" target="_blank"
+                  href="https://wa.me/919876543210"
+                  target="_blank"
                   className="block w-full text-center px-4 py-2 rounded-md bg-yellow-600 text-white font-medium hover:bg-primary/90 transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
